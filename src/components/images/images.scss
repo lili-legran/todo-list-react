@@ -1,0 +1,15 @@
+.todo-list {
+  &__pin-1,
+  &__pin-2 {
+    position: absolute;
+    max-width: 100px;
+  }
+  &__pin-1 {
+    top: -70px;
+    right: -60px;
+  }
+  &__pin-2 {
+    top: -70px;
+    left: -30px;
+  }
+}
