@@ -1,0 +1,23 @@
+.todo-list {
+  &__task-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__complete-button {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 20px;
+    border: 1px solid #000;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: green;
+    min-width: 38px;
+    min-height: 38px;
+    font-size: 1em;
+    &:hover {
+      background: #e3e3b5;
+      border: 1px solid transparent;
+    }
+  }
+}
