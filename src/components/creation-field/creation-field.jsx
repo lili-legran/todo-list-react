@@ -3,21 +3,24 @@ import './creation-field.scss';
 
 class CreationField extends React.Component {
   state  = {
-    inputValue : ''
+    inputValue: '',
+    valuesArray: []
   }
   getInputValue = (e) => {
     this.setState ({
       inputValue : e.target.value
     })
   }
-
-  // getInputValue = (props) => {
-  //   const inputValue = props.value; // ?
-  // }
-
   createNewTask = () => {
-    // let taskValue = props.
-    console.log(this.state.inputValue);
+    this.state.valuesArray.push(this.state.inputValue); 
+    this.setValue();
+  }
+  setValue = () => {
+    const listItems = this.state.valuesArray.map((item) => {
+      item.text = this.state.inputValue;
+      console.log(item.text);
+      return <li key={item.id}> {item.text} </li>
+    });
   }
   render() {
     return (
