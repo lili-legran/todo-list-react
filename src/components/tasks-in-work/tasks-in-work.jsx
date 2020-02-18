@@ -8,7 +8,10 @@ class TaskInWork extends React.Component {
       <>
         <h2>Tasks in work</h2>
         <ul className="todo-list__active-tasks">
-          <ActiveTask />
+          {
+            this.props.tasksInWork
+              .map(task => <ActiveTask taskInWork={ task } key={ task } />)
+          }
         </ul>
       </>
     )
