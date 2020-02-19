@@ -8,14 +8,14 @@ import SetPin from '../images/images';
 class TodoList extends React.Component {
   state  = {
     inputValue: '',
-    todoTasks: []
+    todoTasks: [],
+    completedTasks: []
   }
 
   setValueInWork = (e) => {
     this.setState ({
       inputValue : e.target.value
     })
-    console.log(this.state.inputValue);
   }
 
   addNewTask = () => {
@@ -25,8 +25,16 @@ class TodoList extends React.Component {
     });
   }
 
+  completeTask = (value) => {
+    let newArray = this.state.todoTasks.filter(item => item !== value);
+    this.setState({
+      todoTasks: newArray,
+      completedTasks: [...this.state.completedTasks, value]
+    });
+    
+  }
+
   render() {
-    console.log(this.state.valuesArray, '<<<<<')
     return (
       <>
         <h1>ToDo LIST</h1>
@@ -36,8 +44,11 @@ class TodoList extends React.Component {
             changeInput={ this.setValueInWork } 
             addTask={ this.addNewTask } 
           />
-          <TaskInWork tasksInWork={ this.state.todoTasks}/>
-          {/* <CompletedTasks /> */}
+          <TaskInWork 
+            tasksInWork={ this.state.todoTasks } 
+            complete={this.completeTask}
+            />
+          <CompletedTasks completedTasks={this.state.completedTasks}/>
         </div>
         <SetPin />
       </>

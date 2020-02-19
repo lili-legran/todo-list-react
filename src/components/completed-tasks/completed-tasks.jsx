@@ -1,6 +1,6 @@
 import React from 'react';
 import './completed-tasks.scss';
-import CompleteTask from '../complete-task/complete-task';
+import CompletedTask from '../completed-task/completed-task';
 
 class CompletedTasks extends React.Component {
   render () {
@@ -8,7 +8,9 @@ class CompletedTasks extends React.Component {
       <>
       <h2 className='todo-list__completed-name'>Completed tasks</h2>
       <ul className="todo-list__completed-tasks">
-        <CompleteTask />
+        { 
+          this.props.completedTasks.map(task => <CompletedTask task={task} key={task} />)
+        }
       </ul>
       </>
     )

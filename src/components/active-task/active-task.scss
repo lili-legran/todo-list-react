@@ -4,4 +4,23 @@
     justify-content: space-between;
     align-items: center;
   }
+  &__complete-button {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 20px;
+    border: 1px solid #000;
+    color: green;
+    min-width: 38px;
+    min-height: 38px;
+    font-size: 1em;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover {
+      background: #e3e3b5;
+      border: 1px solid transparent;
+    }
+  }
+  &__active-task {
+    margin-bottom: 20px;
+  }
 }
